@@ -1,0 +1,147 @@
+
+$browser-xs-viewport: 320; // Default
+$browser-sm-viewport: 768; // Default
+$browser-lg-viewport: 1170; // Default
+
+@function vw768($pixels, $context: $browser-sm-viewport) {
+  @return #{$pixels/$context*100}vw;
+}
+
+@function vw320($pixels, $context: $browser-xs-viewport) {
+  @return #{$pixels/$context*100}vw;
+}
+
+@function vw1170($pixels, $context: $browser-lg-viewport) {
+  @return #{$pixels/$context*100}vw;
+}
+
+$font-peach: #dc4f80;
+$font-dark-peach: #91797a;
+$font-dark: #393939;
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+.vertical-middle{
+	&:before{
+		height: 100%;
+		content:'';
+		display: inline-block;
+		vertical-align: middle;
+	}
+	>*{
+		vertical-align: middle;
+	}
+}
+/* Space out content a bit */
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-feature-settings: "liga";
+	font-style: normal;
+	text-rendering: optimizelegibility;
+	font-family: $main-font,cursive;
+	font-size: $base-font-size;
+	letter-spacing:0.5px;
+	word-spacing:0.5px;
+	min-width:320px;
+	overflow-x:hidden;
+	color:$font-dark;
+	::selection,::-moz-selection {
+		background:rgba(0,0,0,0.05);
+		color:inherit;
+	}
+	a:focus{
+		outline: none;
+	}
+	.nav{
+		>li{
+			>a{
+				border-radius: 0;
+				&:hover,&:focus {
+					background-color: inherit;
+				}
+			}
+			&.active{
+				>a{
+					color: #91797a;
+					background-color: transparent;
+					&:hover,&:active,&:focus{
+						background-color: transparent;
+						color: #dc4f80;
+					}
+				}
+			}
+		}
+	}
+	a{
+		color: #91797a;
+		&:hover,&.active{
+			color: #dc4f80;
+			text-decoration: none;
+		}
+	}
+}
+
+html{
+	min-width: 320px;
+	.container{
+		min-width: 320px;
+	}
+	&.ie,&.firefox.windows{
+		body{
+			font-family: $main-font-fallback;
+		}
+	}
+}
+
+body{
+	min-width: 320px;
+}
+
+.browserupgrade {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+	.container {
+		max-width: 1200px;
+	}
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+
+}

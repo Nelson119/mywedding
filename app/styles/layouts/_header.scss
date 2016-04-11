@@ -1,0 +1,110 @@
+
+/* Custom page header */
+header {
+  border-top: 6px solid #dc4f80;
+  background-color: #fff;
+  position: relative;
+  z-index: 20;
+  /* Make the masthead heading the same height as the navigation */
+  h1 {
+    float: left;
+    margin: 0; 
+    padding: 8px 18px 15px 20px;
+  }
+  .nav-pills{
+    li{
+      a{
+        padding: 25px 15px;
+        color: #91797a;
+        &:hover,&.active{
+          color: $font-peach;
+        }
+      }
+    }
+  }
+  .member{
+    width: 272px;
+    line-height: 66px;
+    font-weight: lighter;
+    text-align: right;
+    padding-right: 20px;
+    position: relative;
+    .hello{
+      line-height: 66px;
+      vertical-align: middle;
+      color: $font-peach;
+      padding-right: 5px;
+    }
+    .profile-picture{
+      vertical-align: middle;
+      height: 43px;
+      width: 43px;
+      line-height: 43px;
+    }
+    li{
+      display: block;
+      padding: 0 20px;
+      a{
+        color:#959595;
+        padding: 20px 0;
+        display: block;
+        line-height: 1em;
+      }
+      & ~li{
+        a{
+          border-top:1px solid #ffd5e2;
+        }
+      }
+    }
+    ul{
+      position: absolute;
+      padding:0;
+      margin:0;
+      width: 100%;
+      text-align: left;
+      background-color: #fff;
+      border: 1px solid #ffd5e4;
+      border-radius:2px;
+      opacity: 0;
+      height: 0;
+      overflow: hidden;
+      transition:0.4s opacity 0s,0s height 5s;
+    }
+    &:hover{
+      ul{
+        height: auto;
+        opacity: 1;
+        transition:0.4s opacity 0s, 0s height 0s
+      }
+    }
+  }
+  .profile-picture{
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #f7a3ba;
+    display: inline-block;
+  }
+  .login-panel{
+    padding-right: 20px;
+    a{
+      line-height: 66px;
+      vertical-align: middle;
+      color: $font-peach;
+      &:hover{
+        color: $font-peach; 
+        opacity: .5;
+      }
+      img{
+        vertical-align: middle;
+        margin: 0 5px;
+      }
+
+      &+a{
+        margin-left: 15px;
+      }
+    }
+  }
+  .row{
+    margin:0;
+  }
+}
