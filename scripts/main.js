@@ -1,0 +1,1 @@
+"use strict";$(function(){$.parallaxify(),$("#coverflow").coverflow({index:3,change:function(){}});var a=$("<ul></ul>");$("#coverflow >*").each(function(){var e=$("<li><a href='javascript:'></a></li>");e.appendTo(a)}),a.insertAfter($("#coverflow"))});
