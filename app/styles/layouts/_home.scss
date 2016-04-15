@@ -269,6 +269,35 @@
 				}
 			}
 		}
+
+
+		&.report{
+			.list-item{
+				font-size: 14px;
+				font-weight: normal;
+				border-radius: 0;
+				figure{
+					padding-top: 300px;
+				}
+				.category{
+					color: #fca0ba;
+				}
+				.date{
+					margin-left: 20px;
+					color: #b5b5b5;
+					font-family: "Century Gothic";
+				}
+				h3{
+					font-size: 18px;
+				}
+				p{
+					margin-top: 20px;
+					font-weight: normal;
+					font-size: 16px;
+					line-height: 1.8;
+				}	
+			}
+		}
 	}
 	.background{
 		&.white{
@@ -279,6 +308,42 @@
 		}
 		&.star{
 			background-image: url(../images/home/star-bg.png);
+		}
+		&.rightnow{
+			background-image: url(../images/home/rightnow-bg.png);
+			height: 510px;
+			text-align: center;
+			color: #fff;
+			.love{
+				width: 50px;
+				height: 50px;
+				margin-top: 100px;
+			}
+			p{
+				margin: 30px 0 0;
+				font-size: 25px;
+				font-family: "Century Gothic";
+			}
+			h3{
+				margin: 32px 0 0;
+				font-size: 40px;
+			}
+			button{
+				margin: 65px 0 0;
+				background:none;
+				border: 1px solid #fff;
+				padding: 15px;
+				border-radius: 5px;
+				transition: 0.4s all 0s;
+				img{
+					width: 166px;
+				}
+
+				&:hover{
+					background-color: rgba(220,79,128,0.26);
+					border-color: #dc4f80;
+				}
+			}
 		}
 	}
 	.grid{
@@ -395,5 +460,16 @@
 				background-color: #f877a4;
 			}
 		}
+	}
+	.container.coverflow{
+		position: relative;
+		height: 370px;
+		margin-top: 30px;
+	}
+	#coverflow{
+		width: 100%;
+		margin-left: -30px;
+		position: absolute;
+	    text-align: center;
 	}
 }
