@@ -12,6 +12,10 @@
 	    top: 0;
 	    position: absolute;
 	    width: 100%;
+		@media screen and (max-width: 768px) {
+		    left: 0!important;
+		    top: 0!important;
+		}
 	  }
 	}
 
@@ -34,6 +38,9 @@
 	  left: 50%;
 	  margin-left: -220px;
 	  color: #fff;
+		@media screen and (max-width: 768px) {	
+			display: none;
+		}
 	  h3{
 	  	font-size: 52px;
 	    margin:0 0 15px;
@@ -49,7 +56,7 @@
 	    letter-spacing: 0;
 	    word-spacing: 0;
 	  }
-	  input{
+	  select{
 	  	width: 385px; 
 	    letter-spacing: 1px;
 	    display: inline-block;
@@ -58,10 +65,14 @@
 	    border-right:0;
 	    border-radius: 4px 0 0 4px;
 	    float: left;
-	    padding: 14px 17px;
+	    padding: 0 17px;
 	    font-size: 14px;
 	    background-color: rgba(255,255,255,0.3);
 	    line-height: 1em;
+	    margin-right: -17px;
+	    option{
+	    	color: $font-peach;
+	    }
 	  }
 	  
 	  button{
@@ -89,15 +100,18 @@
 			color: #dc4f80;
 			content: "SCROLL";
 			display: inline-block;
-			font-size: 8.33px;
-			margin: 0 auto;
-			position: relative;
+			margin: 0 auto 0 -5px;
+			position: absolute;
 			text-align: center;
-			top: -30px;
+			top: -20px;
 			width: 0;
+			transform: scale(0.75);
 		}
 		img{
 			width: 23px;
+		}
+		@media screen and (max-width: 768px) {
+		    display: none;
 		}
 	}
 	.jumbotron{
@@ -159,23 +173,40 @@
 		}
 		.row{
 			margin-top: 70px;
+			@media screen and (max-width: 768px) {
+				margin-top: vw768(40);
+			}
 			&.two{
 				margin-left: -33px;
 				margin-right: -33px;
+				@media screen and (max-width: 768px) {
+					margin-left: vw768(-10);
+					margin-right: vw768(-10);
+				}
 			}
 		}
 		.col-lg-6{
 			padding:0 33px;
 			text-align: left;
+			@media screen and (max-width: 768px) {
+				padding:0 vw768(15);
+			}
 			img{
 				width: 100%;
 			}
 			h4{
+				margin: vw768(-5) 0 0;
 				font-size: 22px;
+				@media screen and (max-width: 768px) {
+					font-size: vw768(18);
+				}
 			}
 			hr{
 				border-color: $font-peach;
 				margin:50px 0 40px;
+				@media screen and (max-width: 768px) {
+					margin: vw768(20) 0 vw768(20);
+				}
 				&:before{
 					background-color: $font-peach;
 					content: '';
@@ -186,6 +217,9 @@
 					transform: rotateZ(45deg);
 					transform-origin: 20px 35px 0;
 					width: 5px;
+					@media screen and (max-width: 768px) {
+						left: vw768(-18);
+					}
 				}
 			}
 			p{
@@ -193,10 +227,28 @@
 				margin-left: -0.08em;
 				line-height: 2;
 				text-align: justify;
+				@media screen and (max-width: 768px) {
+					font-size: vw768(14);
+					line-height: 1.6;
+				}
 			}
 		}
 		&.about{
 			margin-top: 160px;
+			@media screen and (max-width: 768px) {
+				margin-top: -10px;
+			}
+		}
+		&.vendor{
+			@media screen and (max-width: 768px) {
+				.grid{
+					>section{
+						&:nth-child(2) ~ section{
+							display: none;
+						}
+					}
+				}
+			}
 		}
 		&.joinus{
 			height: 385px;
@@ -277,7 +329,7 @@
 				font-weight: normal;
 				border-radius: 0;
 				figure{
-					padding-top: 300px;
+					padding-top: 290px;
 				}
 				.category{
 					color: #fca0ba;
@@ -297,7 +349,17 @@
 					line-height: 1.8;
 				}	
 			}
+			@media screen and (max-width: 768px) {
+				.grid{
+					>section{
+						&:nth-child(2) ~ section{
+							display: none;
+						}
+					}
+				}
+			}
 		}
+
 	}
 	.background{
 		&.white{
@@ -307,26 +369,42 @@
 			background-color: #faf5f5;
 		}
 		&.star{
-			background-image: url(../images/home/star-bg.png);
+			background: url(../images/home/star-bg.png) fixed;
 		}
 		&.rightnow{
-			background-image: url(../images/home/rightnow-bg.png);
+			background: url(../images/home/rightnow-bg.png) center center/ cover;
 			height: 510px;
 			text-align: center;
 			color: #fff;
+			@media screen and (max-width: 768px) {
+				height: 225px;
+			}
 			.love{
 				width: 50px;
 				height: 50px;
 				margin-top: 100px;
+				@media screen and (max-width: 768px) {
+					width: 21px;
+					height: 21px;
+					margin-top: 30px;
+				}
 			}
 			p{
 				margin: 30px 0 0;
 				font-size: 25px;
 				font-family: "Century Gothic";
+				@media screen and (max-width: 768px) {
+					font-size: 15px;
+					margin-top: 20px;
+				}
 			}
 			h3{
 				margin: 32px 0 0;
 				font-size: 40px;
+				@media screen and (max-width: 768px) {
+					font-size: 22px;
+					margin-top: 10px;
+				}
 			}
 			button{
 				margin: 65px 0 0;
@@ -342,6 +420,9 @@
 				&:hover{
 					background-color: rgba(220,79,128,0.26);
 					border-color: #dc4f80;
+				}
+				@media screen and (max-width: 768px) {
+					margin: 20px 0 0;
 				}
 			}
 		}
@@ -363,6 +444,13 @@
 					width: 100%;
 					position: absolute;
 					top:0;
+					transform-origin: 2em 2em 1px;
+					transition: 5s transform ease-out 0.35s;
+					transform: scale(1) translate(0，0);
+					&:hover{
+						transition: 12s transform ease-out 0s;
+						transform: scale(1.5) translate(-4em, -4em);
+					}
 				}
 			}
 			.text{
@@ -465,11 +553,181 @@
 		position: relative;
 		height: 370px;
 		margin-top: 30px;
+		ul{
+			bottom: 50px;
+			margin: 0;
+			padding: 0;
+			position: absolute;
+			text-align: center;
+			width: 100%;
+			word-spacing: 30px;
+			z-index: 10;
+
+			li{
+				display: inline-block;
+				background: none;
+				border: 1px solid #fff;
+				border-radius: 50%;
+				width: 10px;
+				height: 10px;
+				margin: 0 10px;
+				a{
+					display: block;
+					width: 100%;
+					height: 100%;
+				}
+				&.active{
+					background: #fff;
+				}
+			}
+
+		}
 	}
 	#coverflow{
 		width: 100%;
 		margin-left: -30px;
 		position: absolute;
 	    text-align: center;
+	}
+
+
+	#waypoints{
+		position: fixed;
+		top:30%;
+		right: 0;
+
+		a{
+			display: block;
+			width: 10px;
+			height: 10px;
+			margin: 10px 20px;
+			border: 1px solid $font-peach;
+			border-radius: 50%;
+			cursor: pointer;
+
+			&.active{
+				background-color: $font-peach;
+			}
+		}
+		@media screen and (max-width: 768px) {
+			display: none;
+		}
+	}
+
+	header{
+		.menu,.search{
+			display: none;
+		}
+		@media screen and (max-width: 768px) {			
+			&:before{
+				width: 100%;
+				height: 66px;
+				content:'';
+			}
+			height: 66px;
+			width: 100%;
+			border-top: 6px solid $font-peach;
+			h1{
+				width: 100%;
+				position: relative;
+				text-align: center;
+				overflow: hidden;
+				height: 60px;
+			}
+			.nav{
+				padding-top: 60px;
+				position: absolute;
+				width: 100%;
+				opacity: 0;
+				height: 0;
+				overflow: hidden;
+				transition:0.4s opacity ease-out, 0s height ease-out 0.4s;
+				li{
+					display: block;
+					margin: 0; 
+					width: 100%;
+					text-align: center;
+					background-color: #faf5f5;
+					font-size: 18px;
+					&:nth-child(even){
+						background-color: #fff;
+					}
+				}
+			}
+			.login-panel,.member {
+				opacity: 0;
+				height: 0;
+				overflow: hidden;
+				transition:0.4s opacity ease-out, 0s height ease-out 0.4s;
+				position: absolute;
+				top: 439px;
+				background-color: #fff;
+				width: 100%;
+				text-align:	center;
+				padding: 0;
+			}
+			.menu{
+				display: block;
+				position: absolute;
+				left: 26px;
+				top: 20px;
+				.burg{
+					opacity: 1;
+				}
+				.close{
+					opacity: 0;
+					position: absolute;
+					left: 0;
+					top: 0;
+				}
+			}
+			.search{
+				display: block;
+				position: absolute;
+				right: 23px;
+				top: 12px;
+				font-size: 25px;
+				vertical-align: top;
+				color: $font-peach;
+			}
+		}
+	}
+
+	&.menuon{
+		@media screen and (max-width: 768px) {
+			position: relative;
+			&:before{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-color: rgba(0,0,0,0.5);
+				content:'';
+				z-index: 10;
+			}
+			.nav{
+				opacity: 1;
+				height: 439px;
+				transition:0.4s opacity ease-out, 0s height ease-out 0s;
+			}
+			.login-panel,.member {
+				opacity: 1;
+				height: 68px;
+				transition:0.4s opacity ease-out, 0s height ease-out 0s;
+			}
+			.menu{
+				display: block;
+				position: absolute;
+				left: 26px;
+				top: 20px;
+				.burg{
+					opacity: 0;
+				}
+				.close{
+					opacity: 1;
+				}
+			}
+		}
 	}
 }

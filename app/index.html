@@ -37,7 +37,7 @@
           <li><a href="javascript:">團購促銷區</a></li>
           <li><a href="javascript:">婚禮討論區</a></li>
         </ul>
-        <aside class="member pull-right hide fade">
+        <aside class="member pull-right">
           <span class="hello">Hello , 準新娘</span>
           <figure class="profile-picture"><img src="images/profile.png"></figure>
           <ul class="functions">
@@ -49,16 +49,23 @@
             <li><a href="javascript:">登出</a></li>
           </ul>
         </aside>
-        <aside class="login-panel pull-right">
+        <aside class="login-panel pull-right hide fade">
           <a href="javascript:"><img src="images/login.svg" width="14" height="18">登入</a>
           <a href="javascript:"><img src="images/register.svg" width="20" height="20">註冊</a>
         </aside>
       </aside>
+      <a href="javascript:" class="menu">
+        <img class="burg" src="images/common/burg.png">
+        <img class="close" src="images/common/close.png">
+      </a>
+      <a href="javascript:" class="search">
+        <i class="fa fa-search"></i>
+      </a>
     </header>
-    <figure class="kv tree">
-      <img data-parallaxify-range-x="-15" data-parallaxify-range-y="-15" src="images/tree/tree-bg.png">
-      <img data-parallaxify-range-x="120" data-parallaxify-range-y="80" src="images/tree/tree-4.png">
-      <img data-parallaxify-range-x="100" data-parallaxify-range-y="70" src="images/tree/tree-3.png">
+    <figure class="kv tree waypoint">
+      <img data-parallaxify-range-x="15" data-parallaxify-range-y="5" src="images/tree/tree-bg.png">
+      <img data-parallaxify-range-x="-120" data-parallaxify-range-y="-20" src="images/tree/tree-4.png">
+      <img data-parallaxify-range-x="-90" data-parallaxify-range-y="-10" src="images/tree/tree-3.png">
       <img src="images/tree/tree-2.png">
       <img src="images/tree/tree-1.png">
 
@@ -66,7 +73,10 @@
         <h3>婚禮廠商搜尋</h3>
         <h4>超過2000家以上廠商資訊，提供您人生中最美好的選擇</h4>
         <form class="search-form" method="get" action="//google.com/search">
-          <input type="text" name="q" placeholder="請搜尋:婚宴場地,婚紗攝影...">
+          <select name="q" placeholder="請搜尋:婚宴場地,婚紗攝影...">
+            <option value="婚宴場地">婚宴場地</option>
+            <option value="婚紗攝影">婚紗攝影</option>
+          </select>
           <button><i class="fa fa-search"></i>search</button>
         </form>
       </aside>
@@ -77,16 +87,16 @@
     <section class="background white">
       <div class="container">
 
-        <div class="jumbotron about">
+        <div class="jumbotron about waypoint">
           <h3>ABOUT US</h3>
           <p class="lead">結婚雖然是一件非常幸福和快樂的事，不過籌備婚禮的過程中，各種大大小小的雜務，場地的佈置</p>
           <aside class="row two">
-            <section class="col-lg-6">
+            <section class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
               <h4>輕鬆搞定你的婚禮，大小細節不遺漏</h4>
               <hr>
               <p>結婚雖然是一件非常幸福和快樂的事，不過籌備婚禮的過程中，需要處理各種大大小小的雜務，例如是婚禮場地的佈置、酒席、選婚紗等等想起已經叫人非常頭痛為了省卻部份煩惱以下就為你精選 大大小小的雜務，例如是婚禮場地的佈置、酒席、選婚紗等等，想起已經叫人非常頭痛。為了省卻部份煩惱，大大小小的雜務。</p>
             </section>
-            <section class="col-lg-6">
+            <section class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
               <img src="images/home/about.png">
             </section>
           </aside>
@@ -96,19 +106,19 @@
     <section class="background pink">
       <div class="container">
 
-        <div class="jumbotron">
+        <div class="jumbotron vendor waypoint">
           <h3>
             <aside class="front"><span>FIND YOUR</span></aside>
             <img src="images/home/vendor.svg">
             <aside class="rear"><span>熱門廠商專訪</span></aside>
           </h3>
           <aside class="row grid">
-            <section class="col-lg-3">
+            <section class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
               <aside class="list-item">
-                <figure><img src="images/home/vendor-01.png"></figure>
+                <figure><a href="#"><img src="images/home/vendor-01.png"></a></figure>
                 <aside class="text">
                   <span class="category">婚宴場地 / 婚宴會館</span>
-                  <p>WEDDING STUDIO</p>
+                  <p><a href="#">WEDDING STUDIO</a></p>
                   <aside class="functions">
                     <ul>
                       <li><a href="javascript:"><img src="images/common/mail.svg"></a></li>
@@ -120,12 +130,12 @@
                 </aside>
               </aside>
             </section>
-            <section class="col-lg-3">
+            <section class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
               <aside class="list-item">
-                <figure><img src="images/home/vendor-02.png"></figure>
+                <figure><a href="#"><img src="images/home/vendor-02.png"></a></figure>
                 <aside class="text">
                   <span class="category">婚禮攝影 / 個人</span>
-                  <p>WEDDING STUDIO</p>
+                  <p><a href="#">WEDDING STUDIO</a></p>
                   <aside class="functions">
                     <ul>
                       <li><a href="javascript:"><img src="images/common/mail.svg"></a></li>
@@ -137,12 +147,12 @@
                 </aside>
               </aside>
             </section>
-            <section class="col-lg-3">
+            <section class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
               <aside class="list-item">
-                <figure><img src="images/home/vendor-03.png"></figure>
+                <figure><a href="#"><img src="images/home/vendor-03.png"></a></figure>
                 <aside class="text">
                   <span class="category">婚宴場地 / 婚宴會館</span>
-                  <p>WEDDING STUDIO</p>
+                  <p><a href="#">WEDDING STUDIO</a></p>
                   <aside class="functions">
                     <ul>
                       <li><a href="javascript:"><img src="images/common/mail.svg"></a></li>
@@ -154,12 +164,12 @@
                 </aside>
               </aside>
             </section>
-            <section class="col-lg-3">
+            <section class="col-lg-3 col-md-6 col-sm-6 col-xs-6">
               <aside class="list-item">
-                <figure><img src="images/home/vendor-04.png"></figure>
+                <figure><a href="#"><a href="#"><img src="images/home/vendor-04.png"></a></a></figure>
                 <aside class="text">
                   <span class="category">新娘秘書 / 工作室</span>
-                  <p>WEDDING STUDIO</p>
+                  <p><a href="#">WEDDING STUDIO</a></p>
                   <aside class="functions">
                     <ul>
                       <li><a href="javascript:"><img src="images/common/mail.svg"></a></li>
@@ -173,10 +183,10 @@
             </section>
             <section class="col-lg-3">
               <aside class="list-item">
-                <figure><img src="images/home/vendor-01.png"></figure>
+                <figure><a href="#"><img src="images/home/vendor-01.png"></a></figure>
                 <aside class="text">
                   <span class="category">婚宴場地 / 婚宴會館</span>
-                  <p>WEDDING STUDIO</p>
+                  <p><a href="#">WEDDING STUDIO</a></p>
                   <aside class="functions">
                     <ul>
                       <li><a href="javascript:"><img src="images/common/mail.svg"></a></li>
@@ -190,10 +200,10 @@
             </section>
             <section class="col-lg-3">
               <aside class="list-item">
-                <figure><img src="images/home/vendor-02.png"></figure>
+                <figure><a href="#"><img src="images/home/vendor-02.png"></a></figure>
                 <aside class="text">
                   <span class="category">婚禮攝影 / 個人</span>
-                  <p>WEDDING STUDIO</p>
+                  <p><a href="#">WEDDING STUDIO</a></p>
                   <aside class="functions">
                     <ul>
                       <li><a href="javascript:"><img src="images/common/mail.svg"></a></li>
@@ -207,10 +217,10 @@
             </section>
             <section class="col-lg-3">
               <aside class="list-item">
-                <figure><img src="images/home/vendor-03.png"></figure>
+                <figure><a href="#"><img src="images/home/vendor-03.png"></a></figure>
                 <aside class="text">
                   <span class="category">婚宴場地 / 婚宴會館</span>
-                  <p>WEDDING STUDIO</p>
+                  <p><a href="#">WEDDING STUDIO</a></p>
                   <aside class="functions">
                     <ul>
                       <li><a href="javascript:"><img src="images/common/mail.svg"></a></li>
@@ -224,10 +234,10 @@
             </section>
             <section class="col-lg-3">
               <aside class="list-item">
-                <figure><img src="images/home/vendor-04.png"></figure>
+                <figure><a href="#"><img src="images/home/vendor-04.png"></a></figure>
                 <aside class="text">
                   <span class="category">新娘秘書 / 工作室</span>
-                  <p>WEDDING STUDIO</p>
+                  <p><a href="#">WEDDING STUDIO</a></p>
                   <aside class="functions">
                     <ul>
                       <li><a href="javascript:"><img src="images/common/mail.svg"></a></li>
@@ -251,23 +261,23 @@
         </div>
       </div>
     </section>
-    <section class="background white">
+    <section class="background white ">
       <div class="container">
 
-        <div class="jumbotron website">
+        <div class="jumbotron website waypoint">
           <h3>
             <aside class="front"><span>CREATE YOUR</span></aside>
             <img src="images/home/website.svg">
             <aside class="rear"><span>專屬婚禮網站</span></aside>
           </h3>
           <aside class="row two">
-            <section class="col-lg-6">
+            <section class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
               <h4>免費打造專屬你的婚禮網站，<br>分享婚禮大小事</h4>
               <hr>
               <p>結婚雖然是一件非常幸福和快樂的事，不過籌備婚禮的過程中需要處理各種大大小小的雜務，例如是婚禮場地的佈置、酒席、選婚紗等等，想起已經叫人非常頭痛。為了省卻部份煩惱以下就為你精選10個外國的 wedding planners。</p>
               <button><img src="images/common/try-it-now.svg"><img src="images/common/arrow.svg"></button>
             </section>
-            <section class="col-lg-6">
+            <section class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
               <img src="images/home/mac.png">
             </section>
           </aside>
@@ -276,7 +286,7 @@
     </section>
     <section class="background star">
       <div class="container">
-        <div class="jumbotron service vertical-middle">
+        <div class="jumbotron service vertical-middle waypoint">
           <h3>
             <aside class="front"><span>ABOUT OUR</span></aside>
             <img src="images/home/service.svg">
@@ -285,9 +295,9 @@
         </div>
         <aside class="jumbotron service">
           <ul class="row">
-            <li class="col-lg-4">
+            <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
               <article class="list-item row">
-                <aside class="col-lg-2">
+                <aside class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                   <img src="images/common/grid-icon-website.svg">
                 </aside>
                 <aside class="col-lg-10">
@@ -300,9 +310,9 @@
                 </button>
               </article>
             </li>
-            <li class="col-lg-4">
+            <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
               <article class="list-item row">
-                <aside class="col-lg-2">
+                <aside class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                   <img src="images/common/grid-icon-budget.svg">
                 </aside>
                 <aside class="col-lg-10">
@@ -315,9 +325,9 @@
                 </button>
               </article>
             </li>
-            <li class="col-lg-4">
+            <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
               <article class="list-item row">
-                <aside class="col-lg-2">
+                <aside class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                   <img src="images/common/grid-icon-todo.svg">
                 </aside>
                 <aside class="col-lg-10">
@@ -330,9 +340,9 @@
                 </button>
               </article>
             </li>
-            <li class="col-lg-4">
+            <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
               <article class="list-item row">
-                <aside class="col-lg-2">
+                <aside class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                   <img src="images/common/grid-icon-guests.svg">
                 </aside>
                 <aside class="col-lg-10">
@@ -345,9 +355,9 @@
                 </button>
               </article>
             </li>
-            <li class="col-lg-4">
+            <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
               <article class="list-item row">
-                <aside class="col-lg-2">
+                <aside class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                   <img src="images/common/grid-icon-flow.svg">
                 </aside>
                 <aside class="col-lg-10">
@@ -360,9 +370,9 @@
                 </button>
               </article>
             </li>
-            <li class="col-lg-4">
+            <li class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
               <article class="list-item row">
-                <aside class="col-lg-2">
+                <aside class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
                   <img src="images/common/grid-icon-vendor.svg">
                 </aside>
                 <aside class="col-lg-10">
@@ -393,42 +403,41 @@
     <section class="background pink">
       <div class="container">
 
-        <div class="jumbotron report">
+        <div class="jumbotron report waypoint">
           <h3>
             <aside class="front"><span>WEDDING</span></aside>
-            <img src="images/home/vendor.svg">
-            <aside class="rear"><span>婚禮專欄報導</span></aside>
+            <img src="images/home/report.svg"><aside class="rear"><span>婚禮專欄報導</span></aside>
           </h3>
           <aside class="row grid">
-            <section class="col-lg-4">
+            <section class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
               <aside class="list-item">
-                <figure><img src="images/home/report-01.png"></figure>
+                <figure><a href="#"><img src="images/home/report-01.png"></a></figure>
                 <aside class="text">
                   <span class="category">婚禮類別</span>
                   <span class="date">2017. 05. 20</span>
-                  <h3>我的獨特婚禮網站</h3>
+                  <h3><a href="#">我的獨特婚禮網站</a></h3>
                   <p>我的婚禮網站我的婚禮網站我的婚禮網站我的婚禮網站我的婚禮網站我的婚禮婚禮網站我的婚禮婚禮網站我的婚禮網...</p>
                 </aside>
               </aside>
             </section>
-            <section class="col-lg-4">
+            <section class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
               <aside class="list-item">
-                <figure><img src="images/home/report-02.png"></figure>
+                <figure><a href="#"><img src="images/home/report-02.png"></a></figure>
                 <aside class="text">
                   <span class="category">婚禮類別</span>
                   <span class="date">2017. 05. 20</span>
-                  <h3>我的獨特婚禮網站</h3>
+                  <h3><a href="#">我的獨特婚禮網站</a></h3>
                   <p>我的婚禮網站我的婚禮網站我的婚禮網站我的婚禮網站我的婚禮網站我的婚禮婚禮網站我的婚禮婚禮網站我的婚禮網...</p>
                 </aside>
               </aside>
             </section>
-            <section class="col-lg-4">
+            <section class="col-lg-4 col-md-6 col-sm-6 col-xs-6">
               <aside class="list-item">
-                <figure><img src="images/home/report-03.png"></figure>
+                <figure><a href="#"><img src="images/home/report-03.png"></a></figure>
                 <aside class="text">
                   <span class="category">婚禮類別</span>
                   <span class="date">2017. 05. 20</span>
-                  <h3>我的獨特婚禮網站</h3>
+                  <h3><a href="#">我的獨特婚禮網站</a></h3>
                   <p>我的婚禮網站我的婚禮網站我的婚禮網站我的婚禮網站我的婚禮網站我的婚禮婚禮網站我的婚禮婚禮網站我的婚禮網...</p>
                 </aside>
               </aside>
@@ -509,6 +518,9 @@
       </div>
     </footer>
     
+    <nav id="waypoints">
+    </nav>
+
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
       // (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -525,6 +537,8 @@
     <script src="/bower_components/jquery.parallaxify/jquery.parallaxify.js"></script>
     <script src="/bower_components/jquery-ui/jquery-ui.js"></script>
     <script src="/bower_components/coverflow/jquery.coverflow.js"></script>
+    <script src="/bower_components/waypoints/lib/noframework.waypoints.js"></script>
+    <script src="/bower_components/gsap/src/uncompressed/TweenMax.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     
