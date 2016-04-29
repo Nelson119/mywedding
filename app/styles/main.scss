@@ -19,9 +19,11 @@ $icon-font-path: '../fonts/';
 @import "components/wp-classes";
 @import "components/slick-theme";
 @import "components/colorbox";
+@import "common/page";
 // @import "components/vertical-timeline";
 @import "layouts/header";
 @import "layouts/footer";
 @import "layouts/home";
+@import "layouts/page01";
 
 

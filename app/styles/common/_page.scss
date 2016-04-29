@@ -1,0 +1,155 @@
+
+$light-blue: #ecf5fa;
+
+
+.page{
+	background: #faf5f5;
+	color: #626262;
+
+	nav.sub{
+		background: #626262;
+		ul{
+			padding: 0;
+			margin-bottom: 0;
+			width: 100%;
+			position:relative;
+
+			li{
+				list-style: none;
+				display: inline-block;
+				margin-right: 40px;
+				a{
+					font-size: 14px;
+					padding: 12px 0;
+					display: block;
+					color: #dcdcdc;
+					&:hover{
+						color: #fff;
+					}
+				}
+				&.active{
+					a{
+						color: #fff;
+					}
+				}
+				&.underline{
+					position: absolute;
+					left: 0;
+					border-bottom: 5px solid $font-peach;
+					display: block;
+					width: 6.58em;
+					bottom: 0;
+					transition: 0.35s ease-out 0s;
+				}
+				&:nth-child(1).active ~.underline{
+					left:0;
+					width: 6.58em;
+					transition: 0.35s ease-out 0.25s;
+				}
+				&:nth-child(2).active ~.underline{
+					left: calc(7em + 40px);
+					width: 6.58em;
+					transition: 0.35s ease-out 0.25s;
+				}
+				&:nth-child(3).active ~.underline{
+					left: calc(14em + 40px * 2);
+					width: 4.4em;
+					transition: 0.35s ease-out 0.25s;
+				}
+				&:nth-child(4).active ~.underline{
+					left: calc(18.8em + 40px * 3);
+					width: 4.4em;
+					transition: 0.35s ease-out 0.25s;
+				}
+				&:nth-child(5).active ~.underline{
+					left: calc(23.5em + 40px * 4);
+					width: 4.4em;
+					transition: 0.35s ease-out 0.25s;
+				}
+
+				&:nth-child(1):hover ~.underline{
+					left:0;
+					width: 6.58em;
+				}
+				&:nth-child(2):hover ~.underline{
+					left: calc(7em + 40px);
+					width: 6.58em;
+				}
+				&:nth-child(3):hover ~.underline{
+					left: calc(14em + 40px * 2);
+					width: 4.4em;
+				}
+				&:nth-child(4):hover ~.underline{
+					left: calc(18.8em + 40px * 3);
+					width: 4.4em;
+				}
+				&:nth-child(5):hover ~.underline{
+					left: calc(23.5em + 40px * 4);
+					width: 4.4em;
+				}
+			}
+		}
+	}
+	.side{
+		width: 300px;
+		display: block;
+		float: left;
+		margin: 0 25px 0 0;
+		padding: 25px 25px;
+		background: #fff;
+
+		.couple-name{
+			font-size: 18px;
+			color: #626262;
+			text-align: center;
+			margin: 25px 0 0;
+
+		}
+
+		.shape{
+			height: 22px;
+			text-align: center;
+			margin: 5px 0;
+			img{
+				height: 22px;
+			}
+		}
+		.date{
+			font-size: 16px;
+			color: #7d7d7d;
+			text-align: center;
+			margin: 0 0 25px;
+		}
+		.days-last{
+			background: url(../images/common/last-background.png);
+			width: 251px;
+			height: 103px;
+			margin: 0 auto;
+			position: relative;
+			.count-down{
+				font-size: 42.5px;
+				position: absolute;
+				color: #fff;
+				right: 145px;
+				top: 6px;
+			}
+		}
+
+		.profile-picture{
+			border-radius: 50%;
+			overflow: hidden;
+			img{
+				border-radius: 50%;
+			}
+		}
+	}
+	.page-container{
+		margin-top: 25px;
+		margin-bottom: 65px;
+	}
+	.page-content{
+		width: 840px;
+		float: left;
+		background-color: #fff;
+	}
+}

@@ -31,15 +31,19 @@ $(function(){
 			var waypoint = new Waypoint({
 				element: d,
 				handler: function(direction) {
-					console.log(direction);
+					// console.log(direction);
 					a.addClass('active');
 					a.siblings().removeClass('active');
 				}
 			});
 			a.on('click', function(){
 				var direction = $(window).scrollTop() < $(d).offset().top;
+				var top = $(d).offset().top;
+				if(($(d).offset().top) < 10){
+					top = 0;
+				}
 				TweenMax.to('html, body', 0.5, {
-					scrollTop: $(d).offset().top + direction * 1
+					scrollTop: top + direction * 1
 				});
 			});
 			$('#waypoints').append(a);
