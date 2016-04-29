@@ -5,6 +5,11 @@ $light-blue: #ecf5fa;
 .page{
 	background: #faf5f5;
 	color: #626262;
+	header{
+		.menu,.search{
+			display: none;
+		}
+	}
 
 	nav.sub{
 		background: #626262;
