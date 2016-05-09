@@ -318,11 +318,6 @@
 		}
 	}
 
-	header{
-		.menu,.search{
-			display: none;
-		}
-	}
 	.page-content{
 		padding:50px;
 		h2{
@@ -342,6 +337,9 @@
 							stroke:#fff;
 						}
 
+					}
+					.gear{
+						opacity: inherit;
 					}
 				}
 				.title{
@@ -400,28 +398,49 @@
 					position: absolute;
 					bottom: 0;
 					right: -23px;
+					opacity: 0;
 					img{
 						width: 23px;
 						height: 23px;
 					}
 					&:after{
-						width: 143px;
-						height: 89px;
-						background: url(../images/pages/01/hint.png);
-						content:'';
+						content: attr(alt);
+						text-align: left;
+						width: 130px;
+						background: #ffece5;
+						color: #b59797;
+						padding: 10px 15px;
+						line-height: 1.5;
 						opacity: 0;
 						display: block;
 						position:absolute;
 						margin-top: -100%;
-						margin-left: 23px;
+						margin-left: 33px;
 						transform: scale(.6);
+						border-radius: 3px;
 						transition-duration: 0.15s;
 					}
+					&:before{
+						display: block;
+						margin-top: 8px;
+						margin-left: 23px;
+						position:absolute;
+						transform: scale(.6);
+						height: 0;
+						width: 0;
+						opacity: 0;
+						border: 5px solid;
+						border-color: #ffece5 #ffece5 rgba(0,0,0,0) rgba(0,0,0,0);
+						content:'';
+					}
 					&:hover{
-						&:after{
+						&:after,&:before{
 							opacity: 1;
 							transform: scale(1);
 							transition-duration: 0.25s;
+						}
+						&:before{
+							transition-delay: 0.3s;
 						}
 					}
 				}
@@ -478,6 +497,9 @@
 					color: $font-peach;
 					line-height: 0.7;
 					font-weight: bold;
+					&:before{
+						content: attr(data-percent);
+					}
 				}
 				&.sub{
 					font-size: 11px;

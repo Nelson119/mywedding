@@ -1,10 +1,11 @@
 
 $light-blue: #ecf5fa;
 
-
 .page{
 	background: #faf5f5;
 	color: #626262;
+	min-width: 1200px;
+
 	header{
 		.menu,.search{
 			display: none;
@@ -100,9 +101,139 @@ $light-blue: #ecf5fa;
 		display: block;
 		float: left;
 		margin: 0 25px 0 0;
-		padding: 25px 25px;
-		background: #fff;
+		aside{
+			padding: 25px 25px;
+			background: #fff;
+			&+aside{
+				margin-top:25px;
+				h3{
+					margin: 0 0 16px;
+					font-size: 16px;
+					font-weight: normal;
+					img{
+						width: 18px;
+						margin-right: 8px;
+					}
+				}
+			}
+			.item-index{
+				position: relative;
+				letter-spacing: 0.3em;
+				overflow: hidden;
+				&:before{
+					position:absolute;
+					border-bottom:1px dotted currentColor;
+					content:'';
+					width: 100%;
+					bottom: 4px;
+					transform: scale(2);
+					opacity: 0.5;
+				}
+				span{
+					padding: 0 0.3em;
+					position: relative;
+					background:#fff;
+					&.count{
+						float: right;
+						color: $font-peach;
+						&:before{
+							content: attr(data-count);
+						}
+					}
+				}
+			}
+			.progress-container{
+				margin-top:20px;
+			}
+			.progress-bar{
+				box-shadow: none;
+				background-color: $font-peach;
+			}
+			.progress{
+				display: inline-block;
+				margin-bottom: 0;
+				width: 180px;
+				border-radius: 0;
+				box-shadow: none;
+				background-color: $light-blue;
+			}
+			.percent-text{
+				display: inline-block;
+				letter-spacing: 1px;
+				span{
+					display: block;
+					&.numberic{
+						font-size: 25px;
+						font-family: 'Century Gothic';
+						color: $font-peach;
+						line-height: 0.7;
+						font-weight: bold;
+						letter-spacing: -1px;
+						&:before{
+							margin-right: 4px;
+							font-size: 34px;
+							content: attr(data-percent);
+						}
+					}
+				}
+				sub{
+					font-size: 10px;
+					bottom: auto;
+					margin-left: 6px;
+				}
+			}
 
+			hr{
+				border-color: #e5e5e5;
+				margin: 25px -25px;
+			}
+			.categories{
+				padding: 0 0 0 20px;
+				margin: 0;
+				font-size: 14px;
+
+				li{
+					list-style: none;
+					input{
+						display: none;
+						&:checked ~ i{
+							opacity: 1;
+						}
+					}
+					input[type=radio]:checked ~ i{
+							opacity: 1;
+					}
+					label{
+						font-weight: normal;
+						cursor: pointer;
+						width: 100%;
+						position:relative;
+						padding-left: 7px;
+						&:before{
+							top: 5px;
+							left: -20px;
+							content: '';
+							position:absolute;
+							border: 1px solid currentColor;
+							border-radius: 50%;
+							height: 1em;
+							width: 1em;
+
+						}
+						i{
+							background:$font-peach;
+							opacity: 0;
+							width: 8px;
+							height: 8px;
+							position: absolute;
+							left: -17px;
+							top: 8px;
+							border-radius: 50%;
+						}
+					}
+				}
+			}
+		}
 		.couple-name{
 			font-size: 18px;
 			color: #626262;
@@ -151,10 +282,225 @@ $light-blue: #ecf5fa;
 	.page-container{
 		margin-top: 25px;
 		margin-bottom: 65px;
+		min-width: 1200px;
 	}
 	.page-content{
 		width: 840px;
 		float: left;
 		background-color: #fff;
+	}
+
+
+	.new-item{
+		border: 1px dashed #d4d6d9;
+		padding: 7px;
+		line-height: 1;
+		background: #eff5ff;
+		color: #898989;
+	}
+	.item-list{
+		padding: 0;
+		margin: 0;
+		li{
+			list-style: none;
+		}
+		.item {
+			border: 1px solid #a0a0a0;
+			border-radius: 2px;
+			padding: 0 15px;
+			font-size: 14px;
+			margin-bottom: 25px;
+			position: relative;
+			.expend:checked{
+				&~.item-row{
+					padding: 20px 0;
+					height: auto;
+					opacity: inherit;
+				}
+				&~.item-row .edit{ 
+					transform: rotateZ(45deg);
+	    			border-color: $font-peach;
+					background-color: $font-peach;
+					svg{
+						>*{
+							fill: none;
+							stroke: #fff;
+						}
+					}
+				}
+			}
+		}
+		label {
+			margin:0; 
+		}
+
+		input[type=checkbox]{
+			display: none;
+			margin:0;
+
+			&:checked ~ label .pick{
+				border: 0;
+				background: url(../images/pages/02/v.svg);
+
+			}
+
+			&:checked ~ span{
+				color: #f4bbcf;
+				position: relative;
+				&:after{
+					position: absolute;
+					top:50%;
+					left: 0;
+					width: 100%;
+					height: 0;
+					border-bottom: 1px solid #f4bbcf;
+					content:'';
+				}
+			}
+
+		}
+		.edit{ 
+			display: inline-block;
+			border-radius: 50%;
+			width: 25px;
+			height: 25px;
+			overflow: hidden;
+			border: 1px solid #898989;
+			transition-duration: 0.45s;
+			letter-spacing: -1em;
+			label{
+				display: inline-block;
+    			width: 100%;
+    			height: 100%;
+    			cursor: pointer;
+			}
+			svg {
+				>*{
+					fill:none;
+					stroke:#898989;
+				}
+			}
+			&:hover{
+    			border-color: $font-peach;
+				background-color: $font-peach;
+				svg{
+					>*{
+						fill: none;
+						stroke: #fff;
+					}
+				}
+			}
+		}
+		.remove{
+			display: inline-block;
+			border-radius: 50%;
+			width: 25px;
+			height: 25px;
+			overflow: hidden;
+			letter-spacing: -1em;
+			svg{
+				width: 16px;
+				path,line{
+					fill:none;
+					stroke:#B5B5B5;
+				}
+			}
+			&:hover{
+				background-color: $font-peach;
+				svg{
+					path,line{
+						fill:none;
+						stroke:#fff;
+					}
+				}
+			}
+		}
+		.pick{
+			width:25px;
+			height: 25px;
+			// background: url(../images/pages/02/v.svg);
+			display: inline-block;
+			border: 1px solid currentColor;
+			margin: 0;
+			transition-duration: 0.45s;
+		}
+		.buttons{
+			right: 13px;
+			top: 13px;
+			position:absolute;
+			a{
+				margin: 0 5px;
+			}
+		}
+		.item-row{
+			// height: 56px;
+			padding: 20px 0;
+			.item-title{
+				margin-right:45px;
+			}
+
+			&+.item-row{
+				height: 0;
+				border-top: 1px solid currentColor;
+				overflow: hidden;
+				opacity: 0;
+				padding: 0;
+				transition-duration:0.45s;
+			}
+		}
+		.radio-options{
+			padding: 0;
+			margin: 0;
+			font-size: 14px;
+			letter-spacing: 4em;
+			line-height: 2em;
+			display: inline-block;
+			max-width: 600px;
+			.pick{
+				border: 0;
+			}
+			li{
+				list-style: none;
+				display: inline-block;
+				letter-spacing: 1px;
+				input{
+					display: none;
+					&:checked ~ i{
+						opacity: 1;
+					}
+				}
+				input[type=radio]:checked ~ i{
+						opacity: 1;
+				}
+				label{
+					font-weight: normal;
+					cursor: pointer;
+					width: 100%;
+					position:relative;
+					padding-left: 18px;
+					&:before{
+						top: 5px;
+						left: 0;
+						content: '';
+						position:absolute;
+						border: 1px solid currentColor;
+						border-radius: 50%;
+						height: 1em;
+						width: 1em;
+
+					}
+					i{
+						background:$font-peach;
+						opacity: 0;
+						width: 8px;
+						height: 8px;
+						position: absolute;
+						left: 3px;
+						top: 8px;
+						border-radius: 50%;
+					}
+				}
+			}
+		}
 	}
 }

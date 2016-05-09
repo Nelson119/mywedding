@@ -11,6 +11,8 @@
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/animate.css/animate.css" />
+    <link rel="stylesheet" href="/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -20,6 +22,7 @@
     
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
+    <script src="/bower_components/detectizr/dist/detectizr.js"></script>
     <!-- endbuild -->
   </head>
   <body class="page02 page">
@@ -78,26 +81,274 @@
     </nav>
     <div class="container page-container">
       <aside class="row">
-        <aside class="side">
-          <figure class="profile-picture">
-            <img src="images/pages/01/couple.png">
-          </figure>
-          <p class="couple-name">
-            <span class="name1">Francis</span>&nbsp;&amp;&nbsp;
-            <span class="name2">Miranda</span>
-          </p>
-          <figure class="shape">
-            <img src="images/pages/01/shape.svg">
-          </figure>
-          <p class="date">2016.05.01</p>
-          <figure class="days-last">
-            <p class="count-down">199</p>
-          </figure>
-        </aside>
+        <section class="side">
+          <aside>
+            <figure class="profile-picture">
+              <img src="images/pages/01/couple.png">
+            </figure>
+            <p class="couple-name">
+              <span class="name1">Francis</span>&nbsp;&amp;&nbsp;
+              <span class="name2">Miranda</span>
+            </p>
+            <figure class="shape">
+              <img src="images/pages/01/shape.svg">
+            </figure>
+            <p class="date">2016.05.01</p>
+            <figure class="days-last">
+              <p class="count-down">199</p>
+            </figure>
+          </aside>
+          <aside>
+            <h3 class="vertical-middle"><img src="images/common/icon_todo.svg">待辦事項完成度</h3>
+            <p class="item-index"><span>已完成</span><span class="count" data-count="11119">項</span></p>
+            <p class="item-index"><span>待完成</span><span class="count" data-count="19">項</span></p>
+
+            <section class="vertical-bottom progress-container">
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="15"
+                aria-valuemin="0" aria-valuemax="100" style="width:15%">
+                </div>
+              </div>
+              <span class="percent-text">              
+                <span class="numberic" data-percent="15">%</span>
+                <sub>已完成</sub>
+              </span>
+            </section>
+
+            <hr>
+
+            <h3 class="vertical-middle"><img src="images/common/icon_todo.svg">事項類別</h3>
+            <ul class="categories">
+              <li><label for="cb1"><input type="radio" name="category" id="cb1">全部<i class="pick"></i></label></li>
+              <li><label for="cb2"><input type="radio" name="category" id="cb2">婚宴場地<i class="pick"></i></label></li>
+              <li><label for="cb3"><input type="radio" name="category" id="cb3">婚紗拍攝<i class="pick"></i></label></li>
+              <li><label for="cb4"><input type="radio" name="category" id="cb4">婚禮紀錄<i class="pick"></i></label></li>
+              <li><label for="cb5"><input type="radio" name="category" id="cb5">新娘秘書<i class="pick"></i></label></li>
+              <li><label for="cb6"><input type="radio" name="category" id="cb6">禮俗<i class="pick"></i></label></li>
+              <li><label for="cb7"><input type="radio" name="category" id="cb7">新居<i class="pick"></i></label></li>
+              <li><label for="cb8"><input type="radio" name="category" id="cb8">其他<i class="pick"></i></label></li>
+            </ul>
+          </aside>
+        </section>
         <aside class="main page-content">
           <h2>
             待辦事項
           </h2>
+          <button class="new-item">+增加待辦事項</button>
+
+          <p class="peach">前一周內</p>
+
+          <ul class="item-list">
+            <li class="item">
+              <input type="checkbox" class="expend" id="item1">
+              <section class="item-row vertical-middle">
+                <input type="checkbox" name="todo" id="todo1">
+                <label for="todo1"><i class="pick"></i></label>
+                <span>參觀工作室然後瘋狂挑選婚紗禮服，穿了以後不喜歡要怎麼辦...</span>
+
+                <aside class="buttons">
+                  <a class="edit vertical-middle text-center" href="javascript:">
+                    <label for="item1"><svg viewBox="0 0 26 26">
+                      <rect x="11.6" y="6.9" transform="matrix(0.707 0.7072 -0.7072 0.707 12.2449 -5.9432)" style="stroke-width:0.9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" width="3.3" height="9.8"/>
+                      <polygon style=";stroke-width:0.9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="8.6,14.1 7,18.1 11,16.5"/>
+                      <line style=";stroke-width:0.9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="13.3" y1="9.7" x2="15.4" y2="11.9"/>
+                      <line style=";stroke-width:0.9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="14" y1="11.1" x2="9.8" y2="15.3"/>
+                    </svg></label>
+                  </a>
+                  <a class="remove vertical-middle text-center" href="javascript:">
+                    <svg viewBox="0 0 20 22">
+                      <path d="M14.4,4.1H5.6V1.4c0-0.4,0.3-0.7,0.7-0.7h7.4c0.4,0,0.7,0.3,0.7,0.7V4.1z"/>
+                      <path d="M17.4,20.6c0,0.4-0.3,0.7-0.7,0.7H3.3c-0.4,0-0.7-0.3-0.7-0.7V4.8c0-0.4,0.3-0.7,0.7-0.7h13.5
+                        c0.4,0,0.7,0.3,0.7,0.7V20.6z"/>
+                      <line x1="0.2" y1="4.1" x2="19.8" y2="4.1"/>
+                      <line x1="10" y1="7.9" x2="10" y2="17.5"/>
+                      <line x1="6.7" y1="7.9" x2="6.7" y2="17.5"/>
+                      <line x1="13.3" y1="7.9" x2="13.3" y2="17.5"/>
+                    </svg>
+                  </a>
+                </aside>
+              </section>
+              <section class="item-row vertical-middle">
+                <aside class="vertical-top">
+                  <span class="item-title">選擇分類</span>
+                  <ul class="radio-options">
+                    <li>
+                      <label for="opt1"><input type="radio" name="category" id="opt1">婚宴場地<i class="pick"></i></label>
+                    </li>
+                    <li>
+                      <label for="opt2"><input type="radio" name="category" id="opt2">婚禮紀錄<i class="pick"></i></label>
+                    </li>
+                    <li>
+                      <label for="opt3"><input type="radio" name="category" id="opt3">禮俗<i class="pick"></i></label>
+                    </li>
+                    <li>
+                      <label for="opt4"><input type="radio" name="category" id="opt4">其他<i class="pick"></i></label>
+                    </li>
+                    <li>
+                      <label for="opt5"><input type="radio" name="category" id="opt5">婚紗拍攝<i class="pick"></i></label>
+                    </li>
+                    <li>
+                      <label for="opt6"><input type="radio" name="category" id="opt6">新娘秘書<i class="pick"></i></label>
+                    </li>
+                    <li>
+                      <label for="opt7"><input type="radio" name="category" id="opt7">新居<i class="pick"></i></label>
+                    </li>
+                  </ul>                  
+                </aside>
+              </section>
+              <section class="item-row vertical-middle">
+                <aside class="vertical-top">
+                  <span class="item-title">選擇日期</span>
+                  <input type="date">                 
+                </aside>
+              </section>
+            </li>
+            <li class="item">
+              <input type="checkbox" class="expend" id="item2">
+              <section class="item-row vertical-middle">
+                <input type="checkbox" name="todo" id="todo2">
+                <label for="todo2"><i class="pick"></i></label>
+                <span>參觀工作室然後瘋狂挑選婚紗禮服，穿了以後不喜歡要怎麼辦...</span>
+
+                <aside class="buttons">
+                  <a class="edit vertical-middle text-center" href="javascript:">
+                    <label for="item2"><svg viewBox="0 0 26 26">
+                      <rect x="11.6" y="6.9" transform="matrix(0.707 0.7072 -0.7072 0.707 12.2449 -5.9432)" style="stroke-width:0.9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" width="3.3" height="9.8"/>
+                      <polygon style=";stroke-width:0.9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="8.6,14.1 7,18.1 11,16.5"/>
+                      <line style=";stroke-width:0.9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="13.3" y1="9.7" x2="15.4" y2="11.9"/>
+                      <line style=";stroke-width:0.9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="14" y1="11.1" x2="9.8" y2="15.3"/>
+                    </svg></label>
+                  </a>
+                  <a class="remove vertical-middle text-center" href="javascript:">
+                    <svg viewBox="0 0 20 22">
+                      <path d="M14.4,4.1H5.6V1.4c0-0.4,0.3-0.7,0.7-0.7h7.4c0.4,0,0.7,0.3,0.7,0.7V4.1z"/>
+                      <path d="M17.4,20.6c0,0.4-0.3,0.7-0.7,0.7H3.3c-0.4,0-0.7-0.3-0.7-0.7V4.8c0-0.4,0.3-0.7,0.7-0.7h13.5
+                        c0.4,0,0.7,0.3,0.7,0.7V20.6z"/>
+                      <line x1="0.2" y1="4.1" x2="19.8" y2="4.1"/>
+                      <line x1="10" y1="7.9" x2="10" y2="17.5"/>
+                      <line x1="6.7" y1="7.9" x2="6.7" y2="17.5"/>
+                      <line x1="13.3" y1="7.9" x2="13.3" y2="17.5"/>
+                    </svg>
+                  </a>
+                </aside>
+              </section>
+              <section class="item-row vertical-middle">
+                <aside class="vertical-top">
+                  <span class="item-title">選擇分類</span>
+                  <ul class="radio-options">
+                    <li>
+                      <label for="opt11"><input type="radio" name="category" id="opt11">婚宴場地<i class="pick"></i></label>
+                    </li>
+                    <li>
+                      <label for="opt12"><input type="radio" name="category" id="opt12">婚禮紀錄<i class="pick"></i></label>
+                    </li>
+                    <li>
+                      <label for="opt13"><input type="radio" name="category" id="opt13">禮俗<i class="pick"></i></label>
+                    </li>
+                    <li>
+                      <label for="opt14"><input type="radio" name="category" id="opt14">其他<i class="pick"></i></label>
+                    </li>
+                    <li>
+                      <label for="opt15"><input type="radio" name="category" id="opt15">婚紗拍攝<i class="pick"></i></label>
+                    </li>
+                    <li>
+                      <label for="opt16"><input type="radio" name="category" id="opt16">新娘秘書<i class="pick"></i></label>
+                    </li>
+                    <li>
+                      <label for="opt17"><input type="radio" name="category" id="opt17">新居<i class="pick"></i></label>
+                    </li>
+                  </ul>                  
+                </aside>
+              </section>
+              <section class="item-row vertical-middle">
+                <aside class="vertical-top">
+                  <span class="item-title">選擇日期</span>
+                  <input type="date">                 
+                </aside>
+              </section>
+            </li>
+            <li class="item">
+              <input type="checkbox" class="expend" id="item3">
+              <section class="item-row vertical-middle">
+                <input type="checkbox" name="todo" id="todo3">
+                <label for="todo3"><i class="pick"></i></label>
+                <span>參觀工作室然後瘋狂挑選婚紗禮服，穿了以後不喜歡要怎麼辦...</span>
+
+                <aside class="buttons">
+                  <a class="edit vertical-middle text-center" href="javascript:">
+                    <label for="item3"><svg viewBox="0 0 26 26">
+                      <rect x="11.6" y="6.9" transform="matrix(0.707 0.7072 -0.7072 0.707 12.2449 -5.9432)" style="stroke-width:0.9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" width="3.3" height="9.8"/>
+                      <polygon style=";stroke-width:0.9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" points="8.6,14.1 7,18.1 11,16.5"/>
+                      <line style=";stroke-width:0.9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="13.3" y1="9.7" x2="15.4" y2="11.9"/>
+                      <line style=";stroke-width:0.9;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="14" y1="11.1" x2="9.8" y2="15.3"/>
+                    </svg></label>
+                  </a>
+                  <a class="remove vertical-middle text-center" href="javascript:">
+                    <svg viewBox="0 0 20 22">
+                      <path d="M14.4,4.1H5.6V1.4c0-0.4,0.3-0.7,0.7-0.7h7.4c0.4,0,0.7,0.3,0.7,0.7V4.1z"/>
+                      <path d="M17.4,20.6c0,0.4-0.3,0.7-0.7,0.7H3.3c-0.4,0-0.7-0.3-0.7-0.7V4.8c0-0.4,0.3-0.7,0.7-0.7h13.5
+                        c0.4,0,0.7,0.3,0.7,0.7V20.6z"/>
+                      <line x1="0.2" y1="4.1" x2="19.8" y2="4.1"/>
+                      <line x1="10" y1="7.9" x2="10" y2="17.5"/>
+                      <line x1="6.7" y1="7.9" x2="6.7" y2="17.5"/>
+                      <line x1="13.3" y1="7.9" x2="13.3" y2="17.5"/>
+                    </svg>
+                  </a>
+                </aside>
+              </section>
+              <section class="item-row vertical-middle">
+                <aside class="vertical-top">
+                  <span class="item-title">選擇分類</span>
+                  <ul class="radio-options">
+                    <li>
+                      <label for="opt31"><input type="radio" name="category" id="opt31">婚宴場地<i class="pick"></i></label>
+                    </li>
+                    <li>
+                      <label for="opt32"><input type="radio" name="category" id="opt32">婚禮紀錄<i class="pick"></i></label>
+                    </li>
+                    <li>
+                      <label for="opt33"><input type="radio" name="category" id="opt33">禮俗<i class="pick"></i></label>
+                    </li>
+                    <li>
+                      <label for="opt34"><input type="radio" name="category" id="opt34">其他<i class="pick"></i></label>
+                    </li>
+                    <li>
+                      <label for="opt35"><input type="radio" name="category" id="opt35">婚紗拍攝<i class="pick"></i></label>
+                    </li>
+                    <li>
+                      <label for="opt36"><input type="radio" name="category" id="opt36">新娘秘書<i class="pick"></i></label>
+                    </li>
+                    <li>
+                      <label for="opt7"><input type="radio" name="category" id="opt7">新居<i class="pick"></i></label>
+                    </li>
+                    <li>
+                      <label for="opt1"><input type="radio" name="category" id="opt1">婚宴場地<i class="pick"></i></label>
+                    </li>
+                    <li>
+                      <label for="opt32"><input type="radio" name="category" id="opt32">婚禮紀錄<i class="pick"></i></label>
+                    </li>
+                    <li>
+                      <label for="opt33"><input type="radio" name="category" id="opt33">禮俗<i class="pick"></i></label>
+                    </li>
+                    <li>
+                      <label for="opt4"><input type="radio" name="category" id="opt4">其他<i class="pick"></i></label>
+                    </li>
+                    <li>
+                      <label for="opt5"><input type="radio" name="category" id="opt5">婚紗拍攝<i class="pick"></i></label>
+                    </li>
+                    <li>
+                      <label for="opt6"><input type="radio" name="category" id="opt6">新娘秘書<i class="pick"></i></label>
+                    </li>
+                    <li>
+                      <label for="opt7"><input type="radio" name="category" id="opt7">新居<i class="pick"></i></label>
+                    </li>
+                  </ul>                  
+                </aside>
+              </section>
+            </li>
+          </ul>
+
+          <p class="peach">前一個月內</p>
         </aside>
       </aside>
     </div>
@@ -181,6 +432,7 @@
     <script src="/bower_components/coverflow/jquery.coverflow.js"></script>
     <script src="/bower_components/waypoints/lib/noframework.waypoints.js"></script>
     <script src="/bower_components/gsap/src/uncompressed/TweenMax.js"></script>
+    <script src="/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     

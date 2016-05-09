@@ -64,5 +64,8 @@ $(function(){
 			}
 		});
 	}
-
-});
+	$('html.firefox input[type=date], html.ie input[type=date], html.safari input[type=date]').datepicker({
+	    format: 'yyyy/mm/dd',
+	    startDate: '-3d'
+	});
+});	

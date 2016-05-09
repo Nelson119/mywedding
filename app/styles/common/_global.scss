@@ -25,6 +25,18 @@ $font-dark: #393939;
   color: #000;
   padding: 0.2em 0;
 }
+.vertical-top{
+	&:before{
+		height: 100%;
+		content:'';
+		display: inline-block;
+		vertical-align: top;
+	}
+	>*{
+		display: inline-block;
+		vertical-align: top;
+	}
+}
 
 .vertical-middle{
 	&:before{
@@ -34,7 +46,20 @@ $font-dark: #393939;
 		vertical-align: middle;
 	}
 	>*{
+		display: inline-block;
 		vertical-align: middle;
+	}
+}
+.vertical-bottom{
+	&:before{
+		height: 100%;
+		content:'';
+		display: inline-block;
+		vertical-align: bottom;
+	}
+	>*{
+		display: inline-block;
+		vertical-align: bottom;
 	}
 }
 /* Space out content a bit */
